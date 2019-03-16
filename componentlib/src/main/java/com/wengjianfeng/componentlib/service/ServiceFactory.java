@@ -20,6 +20,10 @@ public class ServiceFactory {
 
 
     public ILoginService getLoginService() {
+
+        if (mLoginService == null){
+            mLoginService = new EmptyLoginService();
+        }
         return mLoginService;
     }
 
@@ -28,6 +32,9 @@ public class ServiceFactory {
     }
 
     public IMineService getMineService() {
+        if (mMineService == null){
+            mMineService = new EmptyMineService();
+        }
         return mMineService;
     }
 
