@@ -3,8 +3,6 @@ package com.wengjianfeng.logincomponent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 
 import com.wengjianfeng.componentlib.service.ILoginService;
 
@@ -14,9 +12,9 @@ import com.wengjianfeng.componentlib.service.ILoginService;
 
 public class LoginService implements ILoginService {
     @Override
-    public void launch(Context context, String targetClass) {
+    public void launch(Context context, Bundle bundle) {
         Intent intent = new Intent(context,LoginActivity.class);
-        intent.putExtra(LoginActivity.EXTRA_TARGET_CLASS,targetClass);
+        intent.putExtra(LoginActivity.EXTRA_TARGET_CLASS,bundle);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }

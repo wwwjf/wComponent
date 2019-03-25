@@ -24,7 +24,7 @@ public class MineService implements IMineService {
     @Override
     public Fragment newUserInfoFragment(FragmentManager fragmentManager, int viewId, Bundle bundle) {
         UserInfoFragment userInfoFragment = UserInfoFragment.newInstance(bundle);
-        fragmentManager.beginTransaction().add(viewId,userInfoFragment).commit();
+        fragmentManager.beginTransaction().add(viewId,userInfoFragment).addToBackStack("userfragment").commit();
         return userInfoFragment;
     }
 }
